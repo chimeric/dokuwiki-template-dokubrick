@@ -1,0 +1,347 @@
+/**
+ * Design Elements - additional  CSS for the DoKubrick Template
+ *
+ * @author Michael Klier <chi@chimeric.de>
+ */
+
+/* ----- General Elements ----- */
+body {
+  font: __font_size__ 'Lucida Grande', Lucida, Helvetica, Arial, sans-serif;
+  color: __text__;
+  margin: __body_margin__;
+  line-height: __line_height__;
+  background: url(images/kubrickbgcolor.jpg);
+}
+
+div.dokuwiki {
+  width: 760px;
+  margin: auto;
+}
+
+div#wrapper {
+  background: url(images/kubrickbg.jpg) repeat-y;
+  width: 760px;
+  padding-bottom: 20px;
+}
+
+div.dokuwiki div.sidebar {
+  float: right;
+  width: 205px;
+  padding: 0 20px 0 5px;
+}
+
+div.dokuwiki div.page {
+  text-align: justify;
+  padding: 0 20px 0 20px;
+  background: __background__;
+}
+
+div.dokuwiki div.left_page {
+  text-align: justify;
+  float: left;
+  width: 480px;
+  padding: 10px 20px 0px 30px;
+}
+
+div.footerinc {
+  float: none;
+  background: url(images/kubrickfooter.jpg) no-repeat;
+  height: 63px;
+  width: 760px;
+}
+
+div.dokuwiki .footerinc a img {
+  padding: 1.5em 0 0 0;
+}
+
+/* ----- Sidebar -------------- */
+div.dokuwiki div.sidebar div.secedit {
+    text-align: right;
+}
+
+div.dokuwiki div.sidebar div.breadcrumbs {
+    margin-left: 0;
+    padding-left: 0.5em;
+}
+
+div.dokuwiki div.sidebar div.secedit input.button {
+    float: none;
+    margin: 0.1em;
+}
+
+div.dokuwiki div.sidebar h1,
+div.dokuwiki div.sidebar h2,
+div.dokuwiki div.sidebar h3,
+div.dokuwiki div.sidebar h4,
+div.dokuwiki div.sidebar h5,
+div.dokuwiki div.sidebar h6 {
+  font-size: 100%;
+  font-family: Verdana, "Lucida Grande", Lucida, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  padding: 0.1em 0.1em 0.1em 0.3em;
+  border: none;
+  margin: 0;
+}
+
+div.dokuwiki div.sidebar h1 {
+  padding-left: 0.2em;
+}
+
+div.dokuwiki div.sidebar div.level2,
+div.dokuwiki div.sidebar div.level3,
+div.dokuwiki div.sidebar div.level4,
+div.dokuwiki div.sidebar div.level5 {
+  margin-left: 3px;
+}
+
+div.dokuwiki div.sidebar ul {
+	margin-top: 0;
+}
+
+div.dokuwiki div.sidebar_box {
+	margin-bottom: 0.3em;
+  border: 1px solid __border__;
+  background: url(images/inputshadow.png) repeat-x;
+}
+
+/* ----- Links ---------------- */
+div.dokuwiki a:hover {
+  color: __extern__;
+}
+
+div.dokuwiki h1 a {
+  display: block;
+}
+
+div.dokuwiki a.action {
+  color: __extern__;
+}
+
+div.dokuwiki a.urlextern{
+    background: transparent url(images/urlextern.png) 0px 1px no-repeat;
+    padding-left: 18px;
+}
+
+/* general headline setup */
+div.dokuwiki h1 a,
+div.dokuwiki h2 a,
+div.dokuwiki h3 a,
+div.dokuwiki h4 a,
+div.dokuwiki h5 a,
+div.dokuwiki a.nolink {
+  color: __headline_color__ !important;
+}
+
+/* ----- Page Elements -------- */
+div.dokuwiki div.breadcrumbs {
+  background: none;
+  padding: 0;
+  padding-left: 25px;
+  margin: 0;
+}
+
+/* general headline setup */
+div.dokuwiki h1, 
+div.dokuwiki h2, 
+div.dokuwiki h3, 
+div.dokuwiki h4, 
+div.dokuwiki h5 {
+  color: __headline_color__;
+}
+
+/* special headlines */
+div.dokuwiki h1 {font-size: 180%; font-weight: normal; border: none; }
+div.dokuwiki h2 {font-size: 170%; border: none; }
+div.dokuwiki h3 {font-size: 160%; font-weight: normal;}
+div.dokuwiki h4 {font-size: 140%; font-weight: normal;}
+div.dokuwiki h5 {font-size: 120%; font-weight: bold;}
+
+/* code blocks by indention */
+div.dokuwiki pre.code,
+div.dokuwiki pre.file {
+  width: auto !important;
+  width: 98%;
+  font-size: 100%;
+}
+
+/* ----- Forms ---------------- */
+div.dokuwiki fieldset {
+  border-color: __form_border__;
+}
+
+div.dokuwiki textarea.edit {
+  border-color: __form_border__;
+}
+
+div.dokuwiki input.edit, div.dokuwiki select.edit {
+  border-color: __form_border__;
+}
+
+div.dokuwiki input.missing {
+  border-color: __form_border__;
+}
+
+div.dokuwiki div.sidebar form#dw__search {
+  margin-bottom: 0.2em;
+  display: block;
+  font-size: 100%;
+}
+
+div.dokuwiki div.sidebar form#dw__search input.edit {
+  margin-left: 0;
+  font-size: 100%;
+  width: 130px;
+  margin: 0;
+}
+
+div.dokuwiki div.sidebar form#dw__search input.button {
+  width: 60px !important;
+  margin-left: 2px;
+}
+
+/* Buttons */
+div.dokuwiki input.button, div.dokuwiki button.button{
+  border-color: __form_border__;
+  font-size: 100%;
+}
+
+div.dokuwiki div.secedit input.button {
+  border-color: __form_border__;
+  font-size: 100%;
+}
+
+div.dokuwiki .bar input.button {
+  height: 24px;
+}
+
+div.dokuwiki input#edit__summary {
+  width: 200px;
+}
+
+/* ----- Table of Contents ---- */
+div.dokuwiki div.left_page div.toc {
+  display: none;
+}
+
+div.dokuwiki div.toc_sidebar div.toc {
+  margin: 0;
+  float: none;
+  width: 100%;
+}
+
+div.dokuwiki div.toc_sidebar div.tocheader {
+  font-size: 120%;
+  line-height: 140%;
+  border: none;
+  background: url(images/inputshadow.png) repeat-x;
+}
+
+div.dokuwiki div.toc_sidebar ul.toc {
+  padding-left: 0.5em;
+  padding-bottom: 0.3em;
+}
+
+div.dokuwiki div.toc_sidebar div#toc__inside {
+  border: none;
+  padding: 0;
+}
+
+/* ----- AJAX Quicksearch ----- */
+div.dokuwiki div.sidebar div.ajax_qsearch {
+  position: relative;
+  left: 0;
+  top: 2px;
+  display: none;
+  background: none;
+  border: none;
+  font-size: 95%;
+  float: left;
+  width: 100%;
+  padding: 0;
+}
+
+div.dokuwiki  div.ajax_qsearch strong {
+  background: url(images/inputshadow.png) repeat-y;
+  display: block;
+  padding: 0.3em;
+}
+
+/* ----- Toolbox -------------- */
+div.dokuwiki div.toolbox_sidebar {
+  padding: 0.3em;
+}
+
+div.dokuwiki div.toolbox_sidebar ul {
+  list-style: none;
+  margin: 0;
+  clear: both;
+}
+
+div.dokuwiki div.toolbox_sidebar a.login,
+div.dokuwiki div.toolbox_sidebar a.logout,
+div.dokuwiki div.toolbox_sidebar a.index,
+div.dokuwiki div.toolbox_sidebar a.recent,
+div.dokuwiki div.toolbox_sidebar a.create,
+div.dokuwiki div.toolbox_sidebar a.edit,
+div.dokuwiki div.toolbox_sidebar a.source,
+div.dokuwiki div.toolbox_sidebar a.show,
+div.dokuwiki div.toolbox_sidebar a.admin,
+div.dokuwiki div.toolbox_sidebar a.revisions,
+div.dokuwiki div.toolbox_sidebar a.subscribe,
+div.dokuwiki div.toolbox_sidebar a.unsubscribe,
+div.dokuwiki div.toolbox_sidebar a.backlink,
+div.dokuwiki div.toolbox_sidebar a.profile {
+  padding: 1px 0px 1px 18px;
+}
+
+div.dokuwiki div.toolbox_sidebar a.login {
+  background: transparent url(images/tool-login.png) 0px 1px no-repeat;
+}
+
+div.dokuwiki div.toolbox_sidebar a.logout,
+div.dokuwiki div.bar a.logout {
+  background: transparent url(images/tool-logout.png) 0px 1px no-repeat;
+}
+
+div.dokuwiki div.toolbox_sidebar a.index {
+  background: transparent url(images/tool-index.png) 1px 1px no-repeat;
+}
+
+div.dokuwiki div.toolbox_sidebar a.recent {
+  background: transparent url(images/tool-recent.png) 0px 1px no-repeat;
+}
+
+div.dokuwiki div.toolbox_sidebar a.create,
+div.dokuwiki div.toolbox_sidebar a.edit {
+  background: transparent url(images/tool-edit.png) 0px 1px no-repeat;
+}
+
+div.dokuwiki div.toolbox_sidebar a.source,
+div.dokuwiki div.toolbox_sidebar a.show {
+  background: transparent url(images/tool-source.png) 0px 1px no-repeat;
+}
+
+div.dokuwiki div.toolbox_sidebar a.admin {
+  background: transparent url(images/tool-admin.png) 0px 1px no-repeat;
+}
+
+div.dokuwiki div.toolbox_sidebar a.revisions {
+  background: transparent url(images/tool-revisions.png) 0px 1px no-repeat;
+}
+
+div.dokuwiki div.toolbox_sidebar a.subscribe,
+div.dokuwiki div.toolbox_sidebar a.unsubscribe {
+  background: transparent url(images/tool-subscribe.png) 0px 1px no-repeat;
+}
+
+div.dokuwiki div.toolbox_sidebar a.backlink {
+  background: transparent url(images/tool-backlink.png) 0px 1px no-repeat;
+}
+
+div.dokuwiki div.toolbox_sidebar a.profile {
+  background: transparent url(images/tool-profile.png) 0px 1px no-repeat;
+}
+
+/* 
+setup vim: ts=2 sw=2: 
+*/

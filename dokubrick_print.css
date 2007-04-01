@@ -1,0 +1,8 @@
+/**
+ * Print - additional CSS for the DoKubrick Template
+ * @author Michael Klier <chi@chimeric.de>
+ */
+
+div.dokuwiki div.sidebar {
+  display:none;
+}
