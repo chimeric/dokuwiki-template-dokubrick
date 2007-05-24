@@ -122,7 +122,7 @@ function tpl_sidebar_dispatch($sb) {
 
         case 'index':
             print '<div class="index_sidebar sidebar_box">' . DOKU_LF;
-            print '  ' . html_index($svID) . DOKU_LF;
+            print '  ' . p_index_xhtml($svID) . DOKU_LF;
             print '</div>' . DOKU_LF;
             break;
 
@@ -208,6 +208,65 @@ function p_sidebar_xhtml($sb) {
     return preg_replace('/<div class="toc">.*?(<\/div>\n<\/div>)/s', '', $data);
 }
 
+/**
+ * Renders the Index
+ *
+ * copy of html_index located in /inc/html.php
+ *
+ * @author Andreas Gohr <andi@splitbrain.org>
+ * @author Michael Klier <chi@chimeric.de>
+ */
+function p_index_xhtml($ns) {
+  require_once(DOKU_INC.'inc/search.php');
+  global $conf;
+  global $ID;
+  $dir = $conf['datadir'];
+  $ns  = cleanID($ns);
+  #fixme use appropriate function
+  if(empty($ns)){
+    $ns = dirname(str_replace(':','/',$ID));
+    if($ns == '.') $ns ='';
+  }
+  $ns  = utf8_encodeFN(str_replace(':','/',$ns));
+
+  // only extract headline
+  preg_match('/<h1>.*?<\/h1>/', p_locale_xhtml('index'), $match);
+  print $match[0];
+
+  $data = array();
+  search($data,$conf['datadir'],'search_index',array('ns' => $ns));
+  print html_buildlist($data,'idx','_html_list_index','html_li_index');
+}
+
+/**
+ * Index item formatter
+ *
+ * User function for html_buildlist()
+ *
+ * @author Andreas Gohr <andi@splitbrain.org>
+ * @author Michael Klier <chi@chimeric.de>
+ */
+function _html_list_index($item){
+  global $ID;
+  global $conf;
+  $ret = '';
+  $base = ':'.$item['id'];
+  $base = substr($base,strrpos($base,':')+1);
+  if($item['type']=='d'){
+    if(@file_exists(wikiFN($item['id'].':'.$conf['start']))) {
+      $ret .= '<a href="'.wl($item['id'].':'.$conf['start']).'" class="idx_dir">';
+      $ret .= $base;
+      $ret .= '</a>';
+    } else {
+      $ret .= '<a href="'.wl($ID,'idx='.$item['id']).'" class="idx_dir">';
+      $ret .= $base;
+      $ret .= '</a>';
+    }
+  }else{
+    $ret .= html_wikilink(':'.$item['id']);
+  }
+  return $ret;
+}
 
 
 
