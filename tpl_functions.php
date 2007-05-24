@@ -135,13 +135,11 @@ function tpl_sidebar_dispatch($sb) {
                         if($instruction[0] == 'notoc') return;
                     }
                 }
-                $meta = p_get_metadata($svID);
-                $toc  = $meta['description']['tableofcontents'];
-                if(count($toc) >= 3) {
-                    print '<div class="toc_sidebar sidebar_box">' . DOKU_LF;
-                    print p_toc_xhtml($toc);
-                    print '</div>' . DOKU_LF;
-                }
+                @require_once(DOKU_INC.'inc/parser/xhtml.php');
+                print '<div class="toc_sidebar sidebar_box">' . DOKU_LF;
+                // replace ids to keep XHTML compliance
+                print preg_replace('/id="(.*?)"/', 'id="sb__\1"', Doku_Renderer_xhtml::render_TOC(p_get_metadata($svID,'description tableofcontents')));
+                print '</div>' . DOKU_LF;
             }
             break;
         
@@ -211,35 +209,7 @@ function p_sidebar_xhtml($sb) {
 }
 
 
-/**
- * Renders the TOC
- *
- * copy of render_TOC() located in /inc/parser/xhtml.php
- *
- * @author Andreas Gohr <andi@splitbrain.org>
- */
-function p_toc_xhtml($toc) {
-    global $lang;
 
-
-    $out  = '';
-    $out  = '<div class="toc">'.DOKU_LF;
-    $out .= '<div class="tocheader toctoggle" id="sb_toc__header">';
-    $out .= $lang['toc'];
-    $out .= '</div>'.DOKU_LF;
-    $out .= '<div id="sb_toc__inside">'.DOKU_LF;
-    $out .= html_buildlist($toc,'toc','_tocitem');
-    $out .= '</div>'.DOKU_LF.'</div>'.DOKU_LF;
-
-    return ($out);
-}
-
-/**
- * Callback function for html_buildlist()
- */
-function _tocitem($item) {
-    return '<span class="li"><a href="#'.$item['hid'].'" class="toc">'.htmlspecialchars($item['title']).'</a></span>';
-}
 
 /**
  * searches for namespace sidebars

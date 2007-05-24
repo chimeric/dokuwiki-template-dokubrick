@@ -9,43 +9,38 @@
  */
 function addSbTocToggle() {
     if(!document.getElementById) return;
-    var header = $('sb_toc__header');
+    var header = $('sb__toc__header');
     if(!header) return;
 
-    var showimg     = document.createElement('img');
-    showimg.id      = 'toc__show';
-    showimg.src     = DOKU_BASE+'lib/images/arrow_down.gif';
-    showimg.alt     = '+';
-    showimg.onclick = toggleSbToc;
-    showimg.style.display = 'none';
+    var obj          = document.createElement('span');
+    obj.id           = 'sb__toc__toggle';
+    obj.innerHTML    = '<span>&minus;</span>';
+    obj.className    = 'toc_close';
+    obj.style.cursor = 'pointer';
 
-    var hideimg     = document.createElement('img');
-    hideimg.id      = 'toc__hide';
-    hideimg.src     = DOKU_BASE+'lib/images/arrow_up.gif';
-    hideimg.alt     = '-';
-    hideimg.onclick = toggleSbToc;
-
-    prependChild(header,showimg);
-    prependChild(header,hideimg);
+    prependChild(header,obj);
+    obj.parentNode.onclick = toggleSbToc;
+    try {
+       obj.parentNode.style.cursor = 'pointer';
+       obj.parentNode.style.cursor = 'hand';
+    }catch(e){}
 }
 
 /**
  * This toggles the visibility of the Table of Contents
  */
 function toggleSbToc() {
-  var toc = $('sb_toc__inside');
-  var showimg = $('toc__show');
-  var hideimg = $('toc__hide');
+  var toc = $('sb__toc__inside');
+  var obj = $('sb__toc__toggle');
   if(toc.style.display == 'none') {
-    toc.style.display      = '';
-    hideimg.style.display = '';
-    showimg.style.display = 'none';
+    toc.style.display   = '';
+    obj.innerHTML       = '<span>&minus;</span>';
+    obj.className       = 'toc_close';
   } else {
-    toc.style.display      = 'none';
-    hideimg.style.display = 'none';
-    showimg.style.display = '';
+    toc.style.display   = 'none';
+    obj.innerHTML       = '<span>+</span>';
+    obj.className       = 'toc_open';
   }
 }
 
-// add events on init
 addInitEvent(addSbTocToggle);
