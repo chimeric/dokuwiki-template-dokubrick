@@ -136,10 +136,13 @@ function tpl_sidebar_dispatch($sb) {
                     }
                 }
                 @require_once(DOKU_INC.'inc/parser/xhtml.php');
-                print '<div class="toc_sidebar sidebar_box">' . DOKU_LF;
                 // replace ids to keep XHTML compliance
-                print preg_replace('/id="(.*?)"/', 'id="sb__\1"', Doku_Renderer_xhtml::render_TOC(p_get_metadata($svID,'description tableofcontents')));
-                print '</div>' . DOKU_LF;
+                $toc = preg_replace('/id="(.*?)"/', 'id="sb__\1"', Doku_Renderer_xhtml::render_TOC(p_get_metadata($svID,'description tableofcontents')));
+                if(!empty($toc)) {
+                    print '<div class="toc_sidebar sidebar_box">' . DOKU_LF;
+                    print ($toc);
+                    print '</div>' . DOKU_LF;
+                }
             }
             break;
         
