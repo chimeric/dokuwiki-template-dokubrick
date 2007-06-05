@@ -23,7 +23,6 @@ function tpl_sidebar() {
 
     // add toolbox and toc to sidebar contents
     array_push($sb_content, 'toolbox');
-    array_push($sb_content, 'toc');
 
     // process contents by given order
     foreach($sb_order as $sb) {
