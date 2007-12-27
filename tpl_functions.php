@@ -157,12 +157,14 @@ function tpl_sidebar_dispatch($sb) {
 
             foreach($actions as $action) {
                 if(!actionOK($action)) continue;
-                if($action == 'admin' && auth_quickaclcheck($svID) != 255) continue;
-                if($action == 'subscription' && !isset($_SERVER['REMOTE_USER'])) continue;
-                if($action == 'profile' && !isset($_SERVER['REMOTE_USER'])) continue;
+                ob_start()
                 print '     <li><div class="li">';
-                tpl_actionlink($action);
-                print '     </div></li>' . DOKU_LF;
+                if(tpl_actionlink($action)) {
+                    ob_end_flush();
+                    print '     </div></li>' . DOKU_LF;
+                } else {
+                    ob_end_clean();
+                }
             }
 
             print '    </ul>' . DOKU_LF;
