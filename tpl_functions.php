@@ -157,7 +157,7 @@ function tpl_sidebar_dispatch($sb) {
 
             foreach($actions as $action) {
                 if(!actionOK($action)) continue;
-                ob_start()
+                ob_start();
                 print '     <li><div class="li">';
                 if(tpl_actionlink($action)) {
                     ob_end_flush();
