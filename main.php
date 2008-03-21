@@ -13,7 +13,7 @@
  *
  * additional editing by
  * @author Michael Klier <chi@chimeric.de>
- * @link   http://chimeric.de/wiki/dokuwiki/templates/arctic/
+ * @link   http://chimeric.de/projects/dokuwiki/template/arctic/
  */
 
 // must be run from within DokuWiki
@@ -62,7 +62,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
     <?php flush()?>
 
     <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' 
-          && $ACT != 'admin' && $ACT != 'login' && $ACT != 'profile') 
+          && $ACT != 'admin' && $ACT != 'login' && $ACT != 'profile' && $ACT != 'conflict') 
     { ?>
     <div class="left_page">
       <?php tpl_content()?>
