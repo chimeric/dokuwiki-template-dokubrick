@@ -43,4 +43,10 @@ function toggleSbToc() {
   }
 }
 
+// attach TOC event
 addInitEvent(addSbTocToggle);
+
+// attach the AJAX index to the sidebar index
+addInitEvent(function(){
+    index.treeattach($('sb__index__tree'));
+});
