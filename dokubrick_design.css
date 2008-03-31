@@ -219,10 +219,6 @@ div.dokuwiki input#edit__summary {
 }
 
 /* ----- Table of Contents ---- */
-div.dokuwiki div.left_page div.toc {
-  display: none;
-}
-
 div.dokuwiki div.toc_sidebar div.toc {
   margin: 0;
   float: none;
@@ -234,6 +230,16 @@ div.dokuwiki div.toc_sidebar div.tocheader {
   line-height: 140%;
   border: none;
   background: url(images/inputshadow.png) repeat-x;
+}
+
+div.dokuwiki div.toc_sidebar div.tocheader span.toc_open {
+  border-color: __background__;
+  border-top-color: __text__;
+}
+
+div.dokuwiki div.toc_sidebar div.tocheader span.toc_close {
+  border-color: __background__;
+  border-bottom-color: __text__;
 }
 
 div.dokuwiki div.toc_sidebar ul.toc {

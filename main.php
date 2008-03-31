@@ -65,7 +65,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
           && $ACT != 'admin' && $ACT != 'login' && $ACT != 'profile' && $ACT != 'conflict') 
     { ?>
     <div class="left_page">
-      <?php tpl_content()?>
+      <?php tpl_content(false)?>
     </div>
     <div class="sidebar">
       <?php tpl_searchform() ?>

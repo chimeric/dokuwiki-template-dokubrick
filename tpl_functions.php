@@ -127,23 +127,13 @@ function tpl_sidebar_dispatch($sb) {
 
         case 'toc':
             if(auth_quickaclcheck($svID) >= AUTH_READ) {
-                $instructions = p_cached_instructions(wikiFN($svID));
-                if(!empty($instructions)) {
-                    foreach($instructions as $instruction) {
-                        // ~~NOTOC~~ is set - do nothing
-                        if($instruction[0] == 'notoc') return;
-                    }
-                }
-                @require_once(DOKU_INC.'inc/parser/xhtml.php');
+                $toc = tpl_toc(true);
                 // replace ids to keep XHTML compliance
-                $meta = p_get_metadata($svID,'description tableofcontents');
-                if(!empty($meta)) {
-                    $toc = preg_replace('/id="(.*?)"/', 'id="sb__\1"', Doku_Renderer_xhtml::render_TOC($meta));
-                    if(!empty($toc)) {
-                        print '<div class="toc_sidebar sidebar_box">' . DOKU_LF;
-                        print ($toc);
-                        print '</div>' . DOKU_LF;
-                    }
+                $toc = preg_replace('/id="(.*?)"/', 'id="sb__\1"', $toc);
+                if(!empty($toc)) {
+                    print '<div class="toc_sidebar sidebar_box">' . DOKU_LF;
+                    print ($toc);
+                    print '</div>' . DOKU_LF;
                 }
             }
             break;
