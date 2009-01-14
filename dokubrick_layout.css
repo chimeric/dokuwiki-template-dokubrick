@@ -1,10 +1,8 @@
 /**
- * Tableless Layout - additional CSS for Arctic Template
- *
+ * Additional CSS for Simple template
  * @author Michael Klier <chi@chimeric.de>
  */
 
-/* ----- Header --------------- */
 div.dokuwiki .stylehead {
   background: url(images/kubrickheader.jpg) no-repeat;
 }
@@ -30,7 +28,6 @@ div.dokuwiki .logo a {
   height: 100px;
 }
 
-/* ----- File Metadata -------- */
 div.dokuwiki div.meta {
   padding: 0 250px 0 20px;
 }
@@ -41,6 +38,7 @@ div.dokuwiki div.meta div.doc {
   text-align: right;
 }
 
-/* 
-setup vim: ts=2 sw=2:
-*/
+div.dokuwiki div.license {
+	margin-top: 0.5em;
+	text-align: center;
+}

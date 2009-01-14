@@ -296,7 +296,8 @@ div.dokuwiki div.toolbox_sidebar a.revisions,
 div.dokuwiki div.toolbox_sidebar a.subscribe,
 div.dokuwiki div.toolbox_sidebar a.unsubscribe,
 div.dokuwiki div.toolbox_sidebar a.backlink,
-div.dokuwiki div.toolbox_sidebar a.profile {
+div.dokuwiki div.toolbox_sidebar a.profile,
+div.dokuwiki div.toolbox_sidebar a.npd {
   padding: 1px 0px 1px 18px;
 }
 
@@ -318,7 +319,8 @@ div.dokuwiki div.toolbox_sidebar a.recent {
 }
 
 div.dokuwiki div.toolbox_sidebar a.create,
-div.dokuwiki div.toolbox_sidebar a.edit {
+div.dokuwiki div.toolbox_sidebar a.edit,
+div.dokuwiki div.toolbox_sidebar a.npd {
   background: transparent url(images/tool-edit.png) 0px 1px no-repeat;
 }
 
