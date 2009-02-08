@@ -28,6 +28,11 @@ div.dokuwiki .logo a {
   height: 100px;
 }
 
+* html div.dokuwiki .logo a {
+  padding-bottom: 0;
+  padding-top: 90px;
+}
+
 div.dokuwiki div.meta {
   padding: 0 250px 0 20px;
 }
