@@ -98,6 +98,10 @@ div.dokuwiki div.sidebar ul {
 	margin-top: 0;
 }
 
+div.dokuwiki div.sidebar ul.idx {
+  margin-left: 1.8em;
+}
+
 div.dokuwiki div.sidebar_box {
 	margin-bottom: 0.3em;
   border: 1px solid __border__;
